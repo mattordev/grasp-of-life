@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// Authored & Written by @mattordev
+/// 
+/// Please see the licene.md document for usage.
+/// </summary>
+namespace GraspofLife
+{
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            #NOTRIM#
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            #NOTRIM#
+        }
+    }
+}
