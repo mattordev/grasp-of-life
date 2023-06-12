@@ -21,7 +21,7 @@ namespace GraspofLife.World.AI.BehaviourTree
         protected NodeState nodeState;
 
         public BTNode parent;
-        protected List<BTNode> children;
+        protected List<BTNode> children = new List<BTNode>();
 
         private Dictionary<string, object> _dataContext = new Dictionary<string, object>();
 
