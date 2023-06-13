@@ -32,7 +32,7 @@ namespace GraspofLife
             }
 
             Transform target = (Transform)t;
-            if (Vector3.Distance(-_transform.position, target.position) <= GuardBT.attackRange)
+            if (Vector3.Distance(_transform.position, target.position) <= GuardBT.attackRange)
             {
                 // Set animation here for attacking true, walking false
                 nodeState = NodeState.SUCCESS;

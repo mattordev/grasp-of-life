@@ -4,7 +4,7 @@ namespace GraspofLife
 {
     public class EnemyManager : MonoBehaviour
     {
-        private int _healthpoints;
+        public int _healthpoints;
 
         private void Awake()
         {
