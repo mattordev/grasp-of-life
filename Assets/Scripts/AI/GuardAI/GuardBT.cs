@@ -13,8 +13,10 @@ namespace GraspofLife
 {
     public class GuardBT : BTTree
     {
+        // The waypoints that the patrol task uses
         public UnityEngine.Transform[] waypoints;
 
+        // define variables that will be used in the tasks and other classes.
         public static float speed = 2f;
         public static float fovRange = 6f;
         public static float attackRange = 1f;
