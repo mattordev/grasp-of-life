@@ -9,6 +9,9 @@ using UnityEngine;
 /// </summary>
 namespace GraspofLife.World.AI.BehaviourTree
 {
+    /// <summary>
+    /// Basically an OR logic gate. If one of the selectors childs succeeds, the selector will succeed. If all of the children fail, the entire selector will fail.
+    /// </summary>
     public class BTSelector : BTNode
     {
         public BTSelector() : base() { }

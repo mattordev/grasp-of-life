@@ -9,6 +9,9 @@ using UnityEngine;
 /// </summary>
 namespace GraspofLife.World.AI.BehaviourTree
 {
+    /// <summary>
+    /// Stops running when one of the children fail. If a child fails, then the sequence fails. If ALL of the sequences children succeed, then the sequence will succeed.
+    /// </summary>
     public class BTSequence : BTNode
     {
         public BTSequence() : base() { }

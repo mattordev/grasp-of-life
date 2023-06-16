@@ -9,6 +9,13 @@ using UnityEngine;
 /// </summary>
 namespace GraspofLife.World.AI.BehaviourTree
 {
+    /// <summary>
+    /// The state of the node:
+    /// 
+    /// RUNNING - The node is still processing.
+    /// SUCESS - The node completed sucessfully.
+    /// FAILURE - The node failed for some reason.
+    /// </summary>
     public enum NodeState
     {
         RUNNING,
@@ -16,6 +23,10 @@ namespace GraspofLife.World.AI.BehaviourTree
         FAILURE
     }
 
+    /// <summary>
+    /// Node class. Features the BTNode.Evaluate to see whether a task is running.
+    /// Has references to child nodes and a dictionary for smart data linking and uses the lazy system.object type and a string identifier.
+    /// </summary>
     public class BTNode
     {
         protected NodeState nodeState;
