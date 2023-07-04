@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.AI;
 
 using GraspofLife.World.AI.BehaviourTree;
 
@@ -17,12 +17,18 @@ namespace GraspofLife
         public UnityEngine.Transform[] waypoints;
 
         // define variables that will be used in the tasks and other classes.
-        public static float speed = 2f;
+
+        public static NavMeshAgent guardAgent;
+
+        public static float speed = 2.5f;
         public static float fovRange = 6f;
-        public static float attackRange = 1f;
+        public static float attackRange = 2f;
 
         protected override BTNode SetupTree()
         {
+            guardAgent = GetComponent<NavMeshAgent>();
+            guardAgent.speed = speed;
+
             BTNode root = new BTSelector(new List<BTNode>
             {
                 new BTSequence (new List<BTNode>

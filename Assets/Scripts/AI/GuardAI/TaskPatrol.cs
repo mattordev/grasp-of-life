@@ -23,6 +23,8 @@ namespace GraspofLife
         private float waitCounter = 0f;
         private bool waiting = false;
 
+        private float minimumDistance = 1.5f;
+
         public TaskPatrol(Transform transform, Transform[] waypoints)
         {
             _transform = transform;
@@ -40,9 +42,11 @@ namespace GraspofLife
             else
             {
                 Transform wp = _waypoints[currentWayPointIndex];
-                if (Vector3.Distance(_transform.position, wp.position) < 0.01f)
+
+                if (Vector3.Distance(GuardBT.guardAgent.transform.position, wp.position) < minimumDistance)
                 {
-                    _transform.position = wp.position;
+                    GuardBT.guardAgent.SetDestination(_transform.position);
+                    // _transform.position = wp.position;
                     waitCounter = 0f;
                     waiting = true;
 
@@ -50,8 +54,9 @@ namespace GraspofLife
                 }
                 else
                 {
-                    _transform.position = Vector3.MoveTowards(_transform.position, wp.position, GuardBT.speed * Time.deltaTime);
-                    _transform.LookAt(wp.position);
+                    GuardBT.guardAgent.SetDestination(wp.position);
+                    // _transform.position = Vector3.MoveTowards(_transform.position, wp.position, GuardBT.speed * Time.deltaTime);
+                    // _transform.LookAt(wp.position);
                 }
             }
 

@@ -25,7 +25,8 @@ namespace GraspofLife
 
             if (Vector3.Distance(_transform.position, target.position) > 0.01f)
             {
-                _transform.position = Vector3.MoveTowards(_transform.position, target.position, GuardBT.speed * Time.deltaTime);
+                GuardBT.guardAgent.SetDestination(target.position);
+                // _transform.position = Vector3.MoveTowards(_transform.position, target.position, GuardBT.speed * Time.deltaTime);
             }
 
             nodeState = NodeState.RUNNING;
