@@ -23,6 +23,8 @@ namespace GraspofLife
         public static float speed = 2.5f;
         public static float fovRange = 6f;
         public static float attackRange = 2f;
+        // Wandering
+        public static float wanderRadius = 10f;
 
         protected override BTNode SetupTree()
         {
@@ -41,7 +43,9 @@ namespace GraspofLife
                     new CheckEnemyInFOVRange(transform),
                     new TaskGoToTarget(transform),
                 }),
+                // new TaskWander(transform.position, transform),
                 new TaskPatrol(transform, waypoints),
+
             });
 
             return root;
